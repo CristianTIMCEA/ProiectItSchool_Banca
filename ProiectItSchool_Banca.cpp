@@ -27,7 +27,8 @@ int main()
 		switch (optiune)
 		{
 		case 1:
-			cout << "       Ati ales optiunea cu numarul 1\n";
+			cout << "       Ati ales optiunea cu numarul 1\n\n";
+			cout << "       Numarul total de conturi este : " << manager.GetNumarConturi() << endl;
 			break;
 		case 2:
 			cout << "       Ati ales optiunea cu numarul 2\n";
@@ -45,6 +46,8 @@ int main()
 			break;
 		case 6:
 			cout << "       Ati ales optiunea cu numarul 6\n";
+			system("cls");
+			manager.printAllConturi();
 			break;
 		case 0:
 			cout << "       Multumim ! La Revedere !\n";
