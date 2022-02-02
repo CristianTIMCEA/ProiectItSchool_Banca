@@ -15,7 +15,6 @@ class ContBancar
 	string m_nume;
 	string m_prenume;
 	float m_sold;
-	//Format iban : RO44ItSchool + 5 caractere alfa-numerice)
 	string m_IBAN;
 	TipMoneda m_tipSold;
 public:
@@ -25,4 +24,7 @@ public:
 	string getPrenume() const;
 	string getIban() const;
 	float getSold() const;
+	void manipulare_sold(float suma);
+	void changeNume(const string& changenume);
+	void changePrenume(const string& changeprenume);
 };

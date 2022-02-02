@@ -28,3 +28,18 @@ float ContBancar::getSold() const
 {
 	return m_sold;
 }
+
+void ContBancar::manipulare_sold(float suma)
+{
+	m_sold += suma;
+}
+
+void ContBancar::changeNume(const string& changenume)
+{
+	m_nume = changenume;
+}
+
+void ContBancar::changePrenume(const string& changeprenume)
+{
+	m_prenume = changeprenume;
+}

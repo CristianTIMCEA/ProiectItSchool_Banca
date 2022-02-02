@@ -36,25 +36,100 @@ int main()
 			manager.adaugareCont();
 			break;
 		case 3:
+			system("cls");
+			cout << endl;
 			cout << "       Ati ales optiunea cu numarul 3\n";
+			cout << endl;
+			cout << "   Pentru modificarea unui cont, apasati tasta -> 1" << endl;
+			cout << endl;
+			cout << "   Pentru a reveni la meniul principal, apasati tasta -> 0" << endl;
+			cout << endl;
+			int modifica;
+			do 
+			{
+				cout << endl;
+				cout << "     Introduceti operatia dorita: ";
+				cin >> modifica;
+				switch (modifica)
+				{
+				case 1:
+				{
+					manager.ModificaCont();
+					break;
+				}
+				}
+
+			} while (modifica != 0);
+			system("cls");
 			break;
 		case 4:
 			cout << "       Ati ales optiunea cu numarul 4\n";
+			manager.EraseAccount();
 			break;
 		case 5:
 			cout << "       Ati ales optiunea cu numarul 5\n";
+			cout << endl;
+			manager.Eliberare_Depunere();
 			break;
 		case 6:
 			cout << "       Ati ales optiunea cu numarul 6\n";
 			system("cls");
-			manager.printAllConturi();
+			cout << endl;
+			cout << "     Pentru a afisa un cont dorit apasati tasta -> 1" << endl;
+			cout << endl;
+			cout << "     Pentru a afisa toate conturile, apasati tasta -> 2" << endl;
+			cout << endl;
+			int tasta;
+			do
+			{
+				cout << endl;
+				cout << "     Introduceti operatia dorita: ";
+				cin >> tasta;
+				switch (tasta)
+				{
+				case 1:
+				{
+					cout << endl;
+					string cautaNume;
+					string cautaPrenume;
+					cout << "   Va rugam sa introduceti numele beneiciarului: ";
+					cin >> cautaNume;
+					cout << endl;
+					cout << "   Va rugam sa introduceti prenumele beneficiarului: ";
+					cin >> cautaPrenume;
+					cout << endl;
+					manager.PrintASpecificCont(cautaNume, cautaPrenume);
+					break;
+				}
+				case 2:
+				{
+					cout << endl;
+					cout << "   Ati ales sa afisati toti benefiaciarii";
+					manager.printAllConturi();
+					break;
+				}
+				default :
+				{
+					cout << endl;
+					cout << "   Optiune invalida\n" << endl;
+					cout << "   Apasati orice tasta pentru revenire la meniul principal  ";
+					break;
+				}
+				}
+			} while (tasta != 0);
 			break;
 		case 0:
+		{
+			cout << endl;
 			cout << "       Multumim ! La Revedere !\n";
 			break;
+		}
 		default:
-			cout << "       Optiune invalida\n";
+		{
+			cout << endl;
+			cout << "       Optiune invalida !\n";
 			break;
+		}
 		}
 	} while (optiune != 0);
 	
