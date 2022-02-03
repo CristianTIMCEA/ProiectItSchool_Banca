@@ -12,7 +12,7 @@ class ManagerConturi
 {
 private:
 	vector<ContBancar*> m_listaConturi;
-	string CreateIban(); // ToDo : modificat chestia asta ca nu da iban unic, le repeta cand rerulezi programul
+	string CreateIban();
 	ContBancar* FindAccount();
 	FileManager* m_fileManager;
 public:

@@ -39,9 +39,8 @@ ContBancar* ManagerConturi::FindAccount()
 {
 	cout << endl;
 	cout << "     Introduceti numele titularului pe care il cautati: ";
-	string nume;
+	string nume;;
 	cin >> nume;
-	//TODO : trebuie extins : fie o metoda ce accepta nume sau prenume, fie facem cumva in aceasta metoda
 
 	for (auto& cont : m_listaConturi)
 	{
@@ -66,7 +65,6 @@ void ManagerConturi::adaugareCont()
 	ContBancar* cont = new ContBancar(nume, prenume, iban);
 	m_listaConturi.push_back(cont);
 	m_fileManager->WriteToCSV(nume, prenume, iban, cont->getSold());
-
 	system("cls");
 }
 
@@ -154,6 +152,7 @@ void ManagerConturi::ModificaCont()
 ManagerConturi::ManagerConturi()
 {
 	m_fileManager = new FileManager();
+	m_listaConturi = m_fileManager->ReadContBancarFromCSV();
 }
 
 ManagerConturi::~ManagerConturi()
