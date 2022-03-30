@@ -6,6 +6,7 @@ void FileManager::WriteToCSV(string nume, string prenume, string iban, float sol
 	csv_file.open("ConturiDataBase.csv", ios::out | ios::app);
 	if (csv_file.is_open())
 	{
+        remove("ConturiDataBase.csv");
 		csv_file << nume << ',' << prenume << ',' << iban << ',' << sold << ',' << '\n';
 	}
 	else
@@ -50,7 +51,6 @@ vector<ContBancar*> FileManager::ReadContBancarFromCSV()
             ContBancar* cont = new ContBancar(cuvinte[0], cuvinte[1], cuvinte[2]);//ToDo:mai un construcotr pentru sold
             conturiDinCsv.push_back(cont);
         }
-
     }
     return conturiDinCsv;
 }
